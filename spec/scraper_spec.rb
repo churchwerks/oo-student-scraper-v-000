@@ -1,5 +1,5 @@
 require "spec_helper"
-
+require "pry"
 describe "Scraper" do
 
   let!(:student_index_array) {[{:name=>"Joe Burgess", :location=>"New York, NY", :profile_url=>"students/joe-burgess.html"},
@@ -22,6 +22,7 @@ describe "Scraper" do
   "I'm a southern California native seeking to find work as a full stack web developer. I enjoying tinkering with computers and learning new things!"}}
 
   describe "#scrape_index_page" do
+    #binding.pry
     it "is a class method that scrapes the student index page and a returns an array of hashes in which each hash represents one student" do
       index_url = "./fixtures/student-site/index.html"
       scraped_students = Scraper.scrape_index_page(index_url)
