@@ -18,16 +18,14 @@ class Scraper
     profile_page = Nokogiri::HTML(open(profile_url))
     student = {}
     profile_page.css().each do |link|
-      binding.pry
       twitter = link.css()
       linkedin = link.css()
       github = link.css()
       blog = link.css()
       profile_quote = link.css()
       bio = link.css()
-      student <<
+      #student <<
     end
     student
   end
-
 end
